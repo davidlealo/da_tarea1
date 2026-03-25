@@ -1,104 +1,160 @@
-body{
-    width: 100 vw;
-    height: 100 vh;
-    background-color: rgb(109, 79, 79);
+@font-face {
+  font-family: "Playwrite";
+  src: url("PlaywriteDKUloopetGuides-Regular.ttf");
 }
 
-h1{
-    color: rgb(247, 234, 234);
-    text-align: center;
-    font-size: 3 em;
-    margin-top: 2 em;
+:root {
+  --principal: rgb(216, 86, 216);
 }
-.container{
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(33, 30, 30);
+  font-family: "Playwrite", sans-serif;
+  color: white;
+}
+
+.titulo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--principal);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.container {
   display: grid;
-grid-template-areas:
-  "uno dos dos"
-  "tres cuatro cinco"
-  "seis seis siete"
-  "ocho nueve nueve";
-
+  grid-template-areas:
+    "uno dos dos"
+    "tres cuatro cinco"
+    "seis seis siete"
+    "ocho nueve nueve";
 }
 
-.cuadro{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3 em;
-    font-weight: bold;
-    padding: 2%;
-}
-
-.uno{
+.uno {
   grid-area: uno;
-  width: 300 px;
-  height: 200 px;
+  width: 300px;
+  height: 200px;
   border: lime solid 2px;
   margin: 2%;
   color: limegreen;
 }
 
-.dos{
+.uno:hover {
+  background-color: lime;
+  color: white;
+  border: none;
+  width: calc(100% - 20px);
+  transform: translate(120px, 50%);
+}
+
+
+.dos {
   grid-area: dos;
-  height: 20 em;
+  height: 20em;
   border: coral solid 2px;
   margin: 2%;
   color: coral;
 }
 
-.tres{
+.dos:hover {
+  background-color: coral;
+  color: white;
+  border: none;
+  height: calc(100% - 20px);
+}
+
+
+.tres {
   grid-area: tres;
-  width: 300 em;
-  height: 20 em;
+  width: 300px;
+  height: 20em;
   border: lightpink solid 2px;
   margin: 2%;
-  color: lightcoral
+  color: lightcoral;
 }
 
-.cuatro{
-    width: 300 em;
-    height: 20 em;
-    border: lightseagreen solid 2px;
-    margin: 2%;
-    grid-area: cuatro;
+.cuatro {
+  width: 300px;
+  height: 20em;
+  border: lightseagreen solid 2px;
+  margin: 2%;
+  grid-area: cuatro;
+}
+
+.cinco {
+  width: 300px;
+  height: 20em;
+  border: lightgray solid 2px;
+  margin: 2%;
+  grid-area: cinco;
+}
+
+.seis {
+  width: 300px;
+  height: 20em;
+  border: lightblue solid 2px;
+  margin: 2%;
+  grid-area: seis;
+}
+
+.siete {
+  width: 300px;
+  height: 20em;
+  border: lightcyan solid 2px;
+  margin: 2%;
+  grid-area: siete;
+}
+
+.ocho {
+  width: 300px;
+  height: 20em;
+  border: lightgoldenrodyellow solid 2px;
+  margin: 2%;
+  grid-area: ocho;
+    
+  &:hover{
+    transform: rotate(0.5turn);}
+}
+
+.nueve {
+  width: 600px;
+  height: 20em;
+  border: lightgray solid 2px;
+  margin: 5%;
+  grid-area: nueve;
+}
+
+.nueve:hover {
+  animation: colored 2s;
+  transform: scale(1.1);
+}
 
 
+@keyframes colored {
+  from {
+    background-color: lightcoral;
+  }
+  to {
+    background-color: red;
+  }
 }
-.cinco{
-    width: 300 em;
-    height: 20 em;
-    border: lightgray solid 2px;
-    margin: 2%;
-    grid-area: cinco;
-
-}
-.seis{
-    width: 300 em;
-    height: 20 em;
-    border: lightblue solid 2px;
-    margin: 2%;
-    grid-area: seis;
-}
-.siete{
-    width: 300 em;
-    height: 20 em;
-    border: lightcyan solid 2px;
-    margin: 2%;
-    grid-area: siete;
 
 
+@media (max-width: 600px) {
+  body {
+    background: rgb(16, 55, 70);
+  }
 }
-.ocho{
-    width: 300 em;
-    height: 20 em;
-    border: lightgoldenrodyellow solid 2px;
-    margin: 2%;
-    grid-area: ocho;
-}
-.nueve{
-    width: 600 em;
-    height: 20 em;
-    border: lightgray solid 2px;
-    margin: 5%;
-    grid-area: nueve;
+
+
+@container (max-width: 400px) {
+  .tres {
+    background-color: lightblue;
+  }
 }
